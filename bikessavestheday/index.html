@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Bikes saves the day</title>
+<style>
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 3.5em;
+  color: white;
+  text-align: center;
+}
+
+body {
+	font-size: 100%;
+}
+
+div {
+    position: fixed;
+    display: block;
+    left: 0px;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-shadow: 1px 1px black;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1em;
+  color: white;
+  text-align: right;
+  direction: rtl;
+  border-width: 0px;
+  width: auto;
+  text-shadow: 1px 1px black;
+
+}
+
+:focus {
+	outline: none;
+}
+
+#counter {
+    top: 5%;
+}
+#counter-value {
+	position: relative;
+	width: 100%;
+    font-size: 2.5em;
+    text-shadow: 2px 2px black;
+    padding: 0px;
+}
+#counter-text {
+	position: relative;
+	width: 100%;
+    padding: 0px;
+}
+#bottom {
+    top: 65%;
+}
+
+</style>
+<script>
+
+	var POPULATION = 2000000000;
+	var DISTANCE_PER_PERSON_DAY = 0.4;
+	var MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
+	var KILOMETERS_PER_MILLISECOND = POPULATION * DISTANCE_PER_PERSON_DAY / MILLISECONDS_PER_DAY;
+	var AVERAGE_CAR_FUEL_EFFICIENCY = 8 / 100;
+	var LITERS_PER_MILLISECOND = KILOMETERS_PER_MILLISECOND * AVERAGE_CAR_FUEL_EFFICIENCY;
+
+	var TESLA_SAVE_PER_DAY = 195000;
+	var TESLA_LITERS_PER_MILLISECOND = TESLA_SAVE_PER_DAY * 3.785 / MILLISECONDS_PER_DAY;
+
+	function startCounter() {
+		setInterval(updateCounter, 100);
+	}
+
+	function updateCounter() {
+		var unitChoice = document.getElementById("unitChoice");
+		var unitFactor = unitChoice.options[unitChoice.selectedIndex].value;
+
+		var vehicleChoice = document.getElementById("vehicleChoice");
+		var vehicleType = vehicleChoice.options[vehicleChoice.selectedIndex].value;
+
+		var volume;
+
+			var now = new Date();
+			var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+			var diff = now - startOfDay;
+		if (vehicleType == 1) {
+			volume = diff * LITERS_PER_MILLISECOND / unitFactor;
+		} else {
+			volume = diff * TESLA_LITERS_PER_MILLISECOND / unitFactor;
+		}
+		document.getElementById("counter-value").innerHTML=addCommas(volume.toFixed(0));
+	}
+
+	// Borrowed from: http://www.mredkj.com/javascript/numberFormat.html
+	function addCommas(nStr)
+	{
+		nStr += '';
+		x = nStr.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? '.' + x[1] : '';
+		var rgx = /(\d+)(\d{3})/;
+		while (rgx.test(x1)) {
+			x1 = x1.replace(rgx, '$1' + ',' + '$2');
+		}
+		return x1 + x2;
+	}
+
+</script>
+
+</head>
+<body onload="startCounter();">
+<!-- source http://www.ibike.org/library/statistics-data.htm -->
+<div id="counter">
+	<div id="counter-value"></div>
+	<div id="counter-text">&nbsp;&nbsp;&nbsp;and counting...</div>
+</div>
+<div id="bottom">
+	<select id="unitChoice">
+	  <option value="1">liters</option>
+	  <option value="3.785">gallons</option>
+	  <option value="200">barrels</option>
+	</select>
+	of gas saved today by people
+	<select id="vehicleChoice" style="direction: ltr;">
+	  <option value="1">riding bikes</option>
+	  <option value="2">driving Teslas</option>
+	</select>
+</div>
