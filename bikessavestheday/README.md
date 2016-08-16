@@ -36,7 +36,7 @@ Electrifying cars only improves on one of the many problems that cars cause. Ele
 - Electric cars still cause local air pollutions due to physical wear. This kind of particle pollution is very harmful to people in areas with heavy traffic.
 - Electric cars cause just as much traffic jams as fossil cars do.
 - Electric or fossile, we must still allocate an absurd amount of our shared space for moving and parked cars.
-- Driving an electric car will still not give you exercise, lack of which is the number one cause of premature death in the industrialized world.
+- Driving an electric car will still not give you exercise. Lack of excercise is an importand contributor to the number one cause of premature death in the industrialized world (Cardiovascular disease and diabetes).
 
 Considering the above, it should be clear to everyone that just changing the engines of our cars and otherwise carrying on as usual is not going to be good enough. Private cars will still be relevant in rural areas, but in the cities, we really need to change our habits.
 
