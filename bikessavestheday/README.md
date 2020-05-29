@@ -1,5 +1,4 @@
 [Bikes Saves The Day](https://sarastro72.github.io/bikessavestheday/)
-
 ===================
 
 Why does this page exist?
@@ -26,7 +25,7 @@ With this I get an estimate of how much fuel would be used per day in the world 
 Are you bashing Tesla?
 ----------------------
 
-Well, no, not really. I like what Elon Musk is trying to do with Tesla. He is forcing through a change in technology that would have been too slow in coming if it was up to the traditional car companies. This change is needed, it is just not enough.
+Well, no, not really. I like what Elon Musk is trying to do with Tesla. He is forcing through a change in technology that would have been too slow in coming if it was up to the traditional car companies. This change is needed. It is just not enough.
 
 Electrifying cars only improves on one of the many problems that cars cause. Electric cars are still inefficient, dangerous, space hogging and pacifying vehicles.
 
